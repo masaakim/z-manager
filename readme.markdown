@@ -1,4 +1,5 @@
-# z-manager
+# z-manager [![Build Status](https://travis-ci.org/morishitter/z-manager.svg)](https://travis-ci.org/morishitter/z-manager)
+
 
 Set z-index value relatively and manage easily.
 
