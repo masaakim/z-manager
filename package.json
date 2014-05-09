@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/morishitter/z-manager/issues"
   },
-  "homepage": "https://github.com/morishitter/z-manager"
+  "homepage": "https://github.com/morishitter/z-manager",
+  "dependencies": {
+    "commander": "^2.2.0",
+    "stdin": "0.0.1",
+    "css-parse": "^1.7.0",
+    "css-z": "0.0.1"
+  },
+  "devDependencies": {
+    "tap": "^0.4.9",
+    "colored-tape": "^1.0.1"
+  }
 }
