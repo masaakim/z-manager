@@ -1,0 +1,24 @@
+{
+  "name": "z-manager",
+  "version": "0.0.0",
+  "description": "Set z-index value relatively and manage easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morishitter/z-manager.git"
+  },
+  "keywords": [
+    "css",
+    "property",
+    "analize"
+  ],
+  "author": "Masaaki Morishita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morishitter/z-manager/issues"
+  },
+  "homepage": "https://github.com/morishitter/z-manager"
+}
