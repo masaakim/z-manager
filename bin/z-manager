@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var pkg = require('../package.json');
+var stdin = require('stdin');
+var Zmanager = require('../');
+
+program
+  .version(pkg.version)
+  .option('-c, --create', 'create .zmanagerc')
+  .option('-m, --manage', 'adapt .zmanagerc to your code')
+  .parse(process.argv);
+
+stdin(function (str) {
+  var options = {};
+  options.create = program.create;
+  options.manage = program.manage;
+
+  var z = new Zmanager(css, options);
+
+  if (option.create) {
+    z.create(css);
+  }
+
+  if (option.manage) {
+  }
+})
