@@ -17,11 +17,15 @@ function Zmanager (css, options) {
 
 Zmanager.prototype.create = function () {
   var stats = z_index.stats(this.css);
-  var selectors = [];
+  // var selectors = [];
+  var zmanagerc = {};
+
   stats.forEach(function (s) {
     if (s.value !== 'auto') {
-      selectors.push(s.selector);
+      // selectors.push(s.selector);
+      zmanagerc["1"] = s.selector;
     }
   });
 
+  return zmanagerc;
 };

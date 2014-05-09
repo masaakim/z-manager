@@ -19,7 +19,7 @@ stdin(function (str) {
   var z = new Zmanager(css, options);
 
   if (option.create) {
-    z.create(css);
+    process.stdout.write(z.create(css));
   }
 
   if (option.manage) {
