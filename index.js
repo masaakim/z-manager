@@ -5,7 +5,7 @@ var parse = require('css-parse');
 module.exports = Zmanager;
 
 function Zmanager (css, options) {
-  if (!(this instanceof Yacp)) {
+  if (!(this instanceof Zmanager)) {
     return new Zmanager(css, options);
   }
 
@@ -17,13 +17,12 @@ function Zmanager (css, options) {
 
 Zmanager.prototype.create = function () {
   var stats = z_index.stats(this.css);
-  // var selectors = [];
   var zmanagerc = {};
+  var num = 1;
 
   stats.forEach(function (s) {
     if (s.value !== 'auto') {
-      // selectors.push(s.selector);
-      zmanagerc["1"] = s.selector;
+      zmanagerc[num++] = s.selector;
     }
   });
 
