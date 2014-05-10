@@ -11,5 +11,10 @@
 }
 
 .z4 {
+  padding: 20px;
   z-index: 4;
+}
+
+.foo {
+  float: left;
 }
