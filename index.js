@@ -56,7 +56,7 @@ Zmanager.prototype.manage = function (zmanagerc) {
     });
   });
 
-  return ast;
+  return stringify(ast);
 };
 
 function getPropNum (obj) {
