@@ -2,6 +2,7 @@
 var z_index = require('css-z');
 var parse = require('css-parse');
 var stringify = require('css-stringify');
+var inspector = require('obj-inspector');
 
 module.exports = Zmanager;
 
@@ -37,19 +38,19 @@ Zmanager.prototype.manage = function (zmanagerc) {
 
   for (var i = 1; i <= z_num; i++) {
     var key = '' + i;
-    z_selectors.push(zmanagerc.key);
+    z_selectors.push(zmanagerc[key]);
   }
 
   z_selectors.forEach(function (z_selector) {
     ast.stylesheet.rules.forEach(function visit (rule) {
       if (rule.rules) rule.rules.forEach(visit);
 
-      if (rule.selector === z_selector) {
+      if (rule.selectors.toString() === z_selector) {
         rule.declarations.forEach(function (declaration) {
           if (declaration.property === 'z-index') {
             if (declaration.value === 'auto') return;
 
-            declaration.value = z_num--;
+            declaration.value ='' + z_num--;
           }
         });
       }
