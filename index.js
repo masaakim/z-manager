@@ -1,6 +1,7 @@
 
 var z_index = require('css-z');
 var parse = require('css-parse');
+var stringify = require('css-stringify');
 
 module.exports = Zmanager;
 
