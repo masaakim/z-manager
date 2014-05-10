@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "tap": "^0.4.9",
-    "colored-tape": "^1.0.1"
+    "colored-tape": "^1.0.1",
+    "obj-inspector": "0.0.1"
   }
 }
