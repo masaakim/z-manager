@@ -1,6 +1,6 @@
 {
   "name": "z-manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Set z-index value relatively and manage easily",
   "main": "index.js",
   "scripts": {
