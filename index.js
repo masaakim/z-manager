@@ -31,7 +31,7 @@ Zmanager.prototype.create = function () {
   return zmanagerc;
 };
 
-Zmanager.prototype.manage = function (zmanagerc) {
+Zmanager.prototype.adapt = function (zmanagerc) {
   var ast = parse(this.css);
   var z_selectors = [];
   var zmanagerc = JSON.parse(zmanagerc);

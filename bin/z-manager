@@ -39,7 +39,7 @@ program
     var zmanagerc = read("./.zmanagerc").toString();
     var css = read(cssFilePath).toString();
     var z = new Zmanager(css);
-    var res = z.manage(zmanagerc);
+    var res = z.adapt(zmanagerc);
 
     fs.writeFile(cssFilePath, res, function (err) {
       if (err) {
