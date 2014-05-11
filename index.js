@@ -36,6 +36,7 @@ Zmanager.prototype.adapt = function (zmanagerc) {
   var z_selectors = [];
   var zmanagerc = JSON.parse(zmanagerc);
   var z_num = getPropNum(zmanagerc);
+  var index = 1;
 
   for (var i = 1; i <= z_num; i++) {
     var key = '' + i;
@@ -51,7 +52,7 @@ Zmanager.prototype.adapt = function (zmanagerc) {
           if (declaration.property === 'z-index') {
             if (declaration.value === 'auto') return;
 
-            declaration.value ='' + z_num--;
+            if (index <= z_num) declaration.value ='' + index++;
           }
         });
       }

@@ -1,18 +1,18 @@
 .z1 {
-  z-index: 2;
-}
-
-.z2 {
   z-index: 3;
 }
 
+.z2 {
+  z-index: 2;
+}
+
 .z3 {
-  z-index: 1;
+  z-index: 4;
 }
 
 .z4 {
   padding: 20px;
-  z-index: 4;
+  z-index: 1;
 }
 
 .foo {
