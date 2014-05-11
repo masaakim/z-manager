@@ -30,7 +30,7 @@ Create `.zmanagerc` and edit this file.
 
 All of selectors have z-index property are written in `.zmanagerc`.
 
-Sort property in descending order of z-index value you want.
+Sort property in ascending order of z-index value you want.
 
 and, run bellow command:
 
