@@ -9,8 +9,8 @@ var read = function (name) {
   return fs.readFileSync(name);
 }
 
-program
-  .version(pkg.version)
+
+program.version(pkg.version)
 
 program
   .command('create <cssFilePath>')
@@ -19,28 +19,36 @@ program
     var css = read(cssFilePath).toString();
     var z = new Zmanager(css);
 
-    fs.writeFile('.zmanagerc', JSON.stringify(z.create(),null, "  "), function (err) {
-      if (err) console.log(err);
+    fs.writeFile('.zmanagerc', JSON.stringify(z.create(), null, "  "), function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Create file `.zmanagerc`.');
+        console.log('Sort property in descending order of z-index value you want.')
+        console.log('and bellow command:');
+        console.log(" ");
+        console.log("$ z-manager adapt <css_file_path>");
+      }
     });
   });
 
 program
-  .command('import')
+  .command('adapt <cssFilePath>')
   .description('adapt .zmanagerc to your code')
+  .action(function (cssFilePath) {
+    var zmanagerc = read("./.zmanagerc").toString();
+    var css = read(cssFilePath).toString();
+    var z = new Zmanager(css);
+    var res = z.manage(zmanagerc);
 
-program
-  .command('setup')
-  .description('run remote setup commands')
-  .action(function(){
-    console.log('setup');
+    fs.writeFile(cssFilePath, res, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Success!!');
+        console.log('Changed `z-index` property.');
+      }
+    });
   });
 
-program
-  .command('exec <css-file>')
-  .description('run the given remote command')
-  .action(function(cmd){
-    console.log('exec "%s"', cmd);
-  });
-
-program
-  .parse(process.argv);
+program.parse(process.argv);
