@@ -1,27 +1,47 @@
 #!/usr/bin/env node
 
+var fs = require('fs');
 var program = require('commander');
 var pkg = require('../package.json');
 var stdin = require('stdin');
 var Zmanager = require('../');
 
+var read = function (name) {
+  return fs.readFileSync(name);
+}
+
 program
   .version(pkg.version)
-  .option('-c, --create', 'create .zmanagerc')
-  .option('-m, --manage', 'adapt .zmanagerc to your code')
+
+program
+  .command('create <cssFilePath>')
+  .description('create .zmanagerc')
+  .action(function (cssFilePath) {
+    var css = read(cssFilePath).toString();
+    var z = new Zmanager(css);
+
+    fs.writeFile('.zmanagerc', JSON.stringify(z.create(),null, "  "), function (err) {
+      if (err) console.log(err);
+    });
+  });
+
+program
+  .command('import')
+  .description('adapt .zmanagerc to your code')
+
+program
+  .command('setup')
+  .description('run remote setup commands')
+  .action(function(){
+    console.log('setup');
+  });
+
+program
+  .command('exec <css-file>')
+  .description('run the given remote command')
+  .action(function(cmd){
+    console.log('exec "%s"', cmd);
+  });
+
+program
   .parse(process.argv);
-
-stdin(function (str) {
-  var options = {};
-  options.create = program.create;
-  options.manage = program.manage;
-
-  var z = new Zmanager(css, options);
-
-  if (option.create) {
-    process.stdout.write(z.create(css));
-  }
-
-  if (option.manage) {
-  }
-})
