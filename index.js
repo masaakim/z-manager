@@ -34,6 +34,7 @@ Zmanager.prototype.create = function () {
 Zmanager.prototype.manage = function (zmanagerc) {
   var ast = parse(this.css);
   var z_selectors = [];
+  var zmanagerc = JSON.parse(zmanagerc);
   var z_num = getPropNum(zmanagerc);
 
   for (var i = 1; i <= z_num; i++) {
