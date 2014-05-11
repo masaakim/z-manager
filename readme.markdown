@@ -3,10 +3,16 @@
 
 Set z-index value relatively and manage easily.
 
+## Installation
+
+```
+$ npm install z-manager -g
+```
+
 ## Example
 
 ```shell
-$ zmanager -c your-css-file.css
+$ z-manager create your-css-file.css
 ```
 
 Create `.zmanagerc` and edit this file.
@@ -22,12 +28,17 @@ Create `.zmanagerc` and edit this file.
 }
 ```
 
-This file is all of selectors have z-index property.
+All of selectors have z-index property are written in `.zmanagerc`.
 
-All you have to do is sorting property in descending order of z-index value you want.
+Sort property in descending order of z-index value you want.
 
-and,
+and, run bellow command:
 
 ```shell
-$ zmanager -m your-css-file.css
+$ z-manager adapt your-css-file.css
 ```
+
+## License
+The MIT License (MIT)
+
+Copyright (c) 2014 Masaaki Morishita
