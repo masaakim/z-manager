@@ -17,6 +17,9 @@
   ],
   "author": "Masaaki Morishita",
   "license": "MIT",
+  "bin": {
+    "z-manager": "bin/z-manager"
+  },
   "bugs": {
     "url": "https://github.com/morishitter/z-manager/issues"
   },
