@@ -26,12 +26,7 @@ test('create', function (t) {
 test('manage', function (t) {
   var z = new Zmanager(fixture('z-index'));
 
-  var zmanagerc = {
-    "1": ".z4",
-    "2": ".z2",
-    "3": ".z1",
-    "4": ".z3"
-  };
+  var zmanagerc = '{"1": ".z4","2": ".z2","3": ".z1","4": ".z3"}';
 
   var result = z.manage(zmanagerc);
   var expected = fixture('z-manage-result');
