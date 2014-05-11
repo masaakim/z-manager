@@ -23,7 +23,6 @@
   "homepage": "https://github.com/morishitter/z-manager",
   "dependencies": {
     "commander": "^2.2.0",
-    "stdin": "0.0.1",
     "css-parse": "^1.7.0",
     "css-z": "0.0.1",
     "css-stringify": "^1.4.1"

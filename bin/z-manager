@@ -3,7 +3,6 @@
 var fs = require('fs');
 var program = require('commander');
 var pkg = require('../package.json');
-var stdin = require('stdin');
 var Zmanager = require('../');
 
 var read = function (name) {
